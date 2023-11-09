@@ -1,115 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Mr_Amaechi | Multi-step form</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   
-  <title>Mr_Amaechi | Multi-step form</title>
-    <link rel="stylesheet" href="css/styles.css">
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  
-</head>
-<body>
-  <main class="main">
-    <!-- ----------------- -->
-    <!-- WRAPPER -->
-    <!-- ----------------- -->
-    <div class="step__container">
-      <!-- -------------- -->
-      <!-- SIDEBAR -->
-      <!-- -------------- -->
-      <div class="sidebar">
-        <div class="step__indecater">
-          <div class="indecater__num">1</div>
-          <div class="indecater__text">
-            <p class="subtitle">STEP 1</p>
-            <p class="mini__title">YOUR INFO</p>
-          </div>
-        </div>
-        <div class="step__indecater">
-          <div class="indecater__num 2">2</div>
-          <div class="indecater__text">
-            <p class="subtitle">STEP 2</p>
-            <p class="mini__title">SELECT PLAN</p>
-          </div>
-        </div>
-        <div class="step__indecater">
-          <div class="indecater__num 3">3</div>
-          <div class="indecater__text">
-            <p class="subtitle">STEP 3</p>
-            <p class="mini__title">ADD-ON</p>
-          </div>
-        </div>
-        <div class="step__indecater">
-          <div class="indecater__num 4">4</div>
-          <div class="indecater__text">
-            <p class="subtitle">STEP 4</p>
-            <p class="mini__title">SUMMARY</p>
-          </div>
-        </div>
-      </div>
-      <!-- form steps container -->
-      <div class="steps__container">
-        <!-- step1 -->
-        <form class="step" id="form">
-          <h3 class="main__title">Personal info</h3>
-          <p class="description">
-            Please provide your name, email address, and phone number.
-          </p>
-          <ul class="list">
-            <li class="list__item">
-              <div class="input__labe">
-                <p class="label">Name</p>
-                <p class="warning"></p>
-              </div>
-              <input
-                type="text"
-                name="userName"
-                class="input"
-                placeholder="e.g. Stephen King"
-                required />
-            </li>
-            <li class="list__item">
-              <div class="input__labe">
-                <p class="label">Email Address</p>
-                <p class="warning"></p>
-              </div>
-              <input
-                type="email"
-                name="email"
-                class="input"
-                placeholder="e.g. stephenking@lorem.com"
-                required />
-            </li>
-            <li class="list__item">
-              <div class="input__labe">
-                <p class="label">Phone Number</p>
-                <p class="warning"></p>
-              </div>
-              <input
-                type="number"
-                name="phone"
-                class="input"
-                placeholder="e.g. +1 234 567 890"
-                required />
-            </li>
-          </ul>
-        </form>
-       
-        <!-- BUTTON -->
+    <script src="js/script.js"></script>
+  </head>
+
+  <body>
+    <div class="form">
+      <div class="form-container">
         <!-- -------------- -->
-        <div class="button__container">
-          <button class="button prev__button" id="prev-button">
-            Go Back
-          </button>
-          <button type="submit" class="button next__button" id="next-button">
-            Next Step
-          </button>
+        <!-- SIDEBAR -->
+        <!-- -------------- -->
+        <div class="form-sidebar">
+          <div class="step active">
+            <div class="circle">1</div>
+            <div class="step-content">
+              <span>STEP 1</span>
+              <b>YOUR INFO</b>
+            </div>
+          </div>
+          <div class="step">
+            <div class="circle">2</div>
+            <div class="step-content">
+              <span>STEP 2</span>
+              <b>SELECT PLAN</b>
+            </div>
+          </div>
+          <div class="step">
+            <div class="circle">3</div>
+            <div class="step-content">
+              <span>STEP 3</span>
+              <b>ADD ONS</b>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="circle">4</div>
+            <div class="step-content">
+              <span>STEP 4</span>
+              <b>SUMMARY</b>
+            </div>
+          </div>
         </div>
+        <!-- side bar ends -->
+
+        <!-- Step 1 start -->
+        <div class="stp step-1">
+          <div class="header">
+            <h1>Personal info</h1>
+            <p class="exp">
+              Please provide your name, email address, and phone number.
+            </p>
+          </div>
+
+          <form>
+            <div class="label">
+              <label for="name">Name</label>
+              <p class="error">This field is required</p>
+            </div>
+            <input
+              type="text"
+              required
+              id="name"
+              placeholder="e.g. Stephen King"
+            />
+
+            <div class="label">
+              <label for="email">Email Address</label>
+              <p class="error">This field is required</p>
+            </div>
+            <input
+              type="text"
+              required
+              id="email"
+              placeholder="e.g. stephenking@lorem.com"
+            />
+
+            <div class="label">
+              <label for="phone">Phone Number</label>
+              <p class="error">This field is required</p>
+            </div>
+            <input
+              type="tel"
+              required
+              id="phone"
+              placeholder="e.g. +1 234 567 890"
+            />
+          </form>
+
+          <div class="btns">
+            <button class="next-stp" type="submit">Next Step</button>
+          </div>
+        </div>
+
+        <!-- Step 1 ends -->
+
+        <!-- step 2 starts -->
+
+        <div class="stp step-2">
+          <div class="header">
+            <h1 class="title">Select Your Plan</h1>
+            <p class="exp">You have the option of monthly or yearly billing</p>
+          </div>
+          <form>
+            <div class="plan-card selected">
+              <img src="./assets/images/icon-arcade.svg" alt="icon-arcade" />
+              <div class="plan-info chosen">
+                <b>Arcade</b>
+                <span class="plan-priced">$9/mo</span>
+              </div>
+            </div>
+
+            <div class="plan-card selected">
+              <img
+                src="./assets/images/icon-advanced.svg"
+                alt="icon-advanced"
+              />
+              <div class="plan-info">
+                <b>Advanced</b>
+                <span class="plan-priced">$12/mo</span>
+              </div>
+            </div>
+
+            <div class="plan-card selected">
+              <img src="./assets/images/icon-pro.svg" alt="icon-pro" />
+              <div class="plan-info">
+                <b>Pro</b>
+                <span class="plan-priced">$15/mo</span>
+              </div>
+            </div>
+          </form>
+          <div class="switcher">
+            <p class="monthly sw-active">Monthly</p>
+            <label class="switch">
+              <input type="checkbox" />
+              <span class="slider round"></span>
+            </label>
+            <p class="yearly">Yearly</p>
+          </div>
+          <div class="btns">
+            <button class="prev-stp" type="button">Go Back</button>
+            <button class="next-stp" type="submit">Next Step</button>
+          </div>
+        </div>
+        <!-- step 2 ends -->
+        <!-- step 3 begins -->
+
+        <div class="stp step-3">
+          <div class="header">
+            <h1 class="title">Pick add-ons</h1>
+            <p class="exp">Add-ons help enhance your gaming experience</p>
+          </div>
+          <form>
+            <div class="box" data-id="1">
+              <input class="ad-selected" type="checkbox" id="online" />
+              <div class="description">
+                <label for="online">Online Service</label>
+                <small>Access to multiplayer games</small>
+              </div>
+              <p class="price">+$1/mo</p>
+            </div>
+
+            <div class="box" data-id="2">
+              <input type="checkbox" id="larger" />
+              <div class="description">
+                <label for="larger">Larger storage</label>
+                <small>Extra 1TB of cloud save</small>
+              </div>
+              <p class="price">+$2/mo</p>
+            </div>
+
+            <div class="box" data-id="3">
+              <input type="checkbox" id="profile" />
+              <div class="description">
+                <label for="profile">Customizable Profile</label>
+                <small>Custom theme on your profile</small>
+              </div>
+              <p class="price">+$2/mo</p>
+            </div>
+          </form>
+
+          <div class="btns">
+            <button class="prev-stp" type="button">Go Back</button>
+            <button class="next-stp" type="submit">Next Step</button>
+          </div>
+        </div>
+
+        <!-- step 3 ends -->
+        <!-- step 4 starts -->
+
+        <div class="stp step-4">
+          <div class="header">
+            <h1 class="title">Finishing up</h1>
+            <p class="exp">
+              Double-check everything looks OK before confirming
+            </p>
+          </div>
+          <div class="selection-box">
+            <div class="selection-container">
+              <div class="selected-plan">
+                <p class="plan-name">Arcade (Monthly)</p>
+                <p class="plan-price">$9/mo</p>                
+              </div>
+              <hr>
+                <div class="addons">
+                  <template>
+                    <div class="selected-addons">
+                      <span class="service-name">Online service</span>
+                      <span class="service-price">+$1/mo</span>
+                    </div>
+                  </template>
+                </div>
+              </div>
+              <p class="total">Total (per month) <b>+$12/mo</b></p>
+            
+            <div class="btns">
+              <button class="prev-stp" type="button">Go Back</button>
+              <button class="next-stp" type="submit">Confirm</button>
+            </div>
+            
+            </div>
+          </div>
+        <!-- step 4 ends -->
+            <!-- step 5 starts -->
+        <div class="stp step-5">
+          <img src="./assets/images/icon-thank-you.svg" alt="icon-thank-you" />
+          <div class="header">
+            <h1 class="title">Thank you</h1>
+            <p class="exp">
+              Thanks for confirming your subscription! We hope you have fun
+              using our platform. if you ever need support, please feel free to
+              email us at support@loremgaming.com
+            </p>
+          </div>
+          <!-- <button class="next-stp"></button> -->
+        </div>
+        <!-- step 5 ends -->
       </div>
     </div>
-  </main>
-</body>
+  </body>
 </html>
